@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 import dotenv from "dotenv";
-
+//removed the custom dotenv
 const privateKey = process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "");
 
 const serviceAccount = {
