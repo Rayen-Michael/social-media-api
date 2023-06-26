@@ -10,7 +10,7 @@ const isAuthenticatedUser = authMiddleware.isAuthenticatedUser;
 // Public Routes  -------------------------------------------------------------
 
 userRouter.route("/check-username")
-  .get(userController.checkUsernameAvailable);
+  .post(userController.checkUsernameAvailable);
 
 // Authenticated Routes -------------------------------------------------------
 
