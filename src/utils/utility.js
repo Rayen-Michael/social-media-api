@@ -36,7 +36,12 @@ utility.checkUsernameAvailable = async (uname) => {
 };
 
 utility.generateAuthToken = async (user) => {
-  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+  const rsaPrivateKey = {
+  key: process.env.JWT_SECRET,
+  passphrase: 'Rayen012011',
+  padding: RSA_PRIVATE_KEY,
+};
+  const token = jwt.sign({ id: user._id }, rsaPrivateKey, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
