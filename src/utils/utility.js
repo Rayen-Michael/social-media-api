@@ -36,8 +36,9 @@ utility.checkUsernameAvailable = async (uname) => {
 };
 
 utility.generateAuthToken = async (user) => {
+  const privateKey = fs.readFileSync("private.pem")
   const rsaPrivateKey = {
-  key: process.env.JWT_SECRET,
+  key: privateKey,
   passphrase: 'Rayen012011',
   padding: RSA_PRIVATE_KEY,
 };
