@@ -5,7 +5,6 @@ import optGenerator from "otp-generator";
 import models from "../models/index.js";
 import ResponseMessages from "../contants/responseMessages.js";
 import axios from "axios";
-import fs from "fs";
 
 const utility = {};
 
@@ -37,7 +36,7 @@ utility.checkUsernameAvailable = async (uname) => {
 };
 
 utility.generateAuthToken = async (user) => {
-  const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN, {
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
