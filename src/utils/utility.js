@@ -43,7 +43,7 @@ utility.generateAuthToken = async (user) => {
   passphrase: 'Rayen012011',
   padding: RSA_PRIVATE_KEY,
 };
-  const token = jwt.sign({ id: user._id }, rsaPrivateKey, {
+  const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
